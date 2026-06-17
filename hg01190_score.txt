@@ -1,0 +1,13 @@
+CYP2D6 StarPhase bake-off (Rung-2 Phase B′)
+============================================================
+split           scored   diplotype   phenotype
+overall              1       0.000       1.000
+non_sv               0       0.000       0.000
+sv_only              1       0.000       1.000
+
+SV-only by population (diplotype / phenotype):
+  AFR   n=0  0.000 / 0.000
+  EAS   n=0  0.000 / 0.000
+  EUR   n=0  0.000 / 0.000
+  SAS   n=1  0.000 / 1.000
+
