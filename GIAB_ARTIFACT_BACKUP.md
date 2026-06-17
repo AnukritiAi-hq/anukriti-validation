@@ -210,8 +210,10 @@ Last verified: **2026-06-17 — 18/18 OK, 0 mismatches.**
   cd anukriti/data/giab_cyp2d6
   sha256sum -c checksums.sha256 && md5sum -c checksums.md5
   ```
-- **DOI mirror:** for the camera-ready, mirror to Zenodo and cite the DOI
-  instead of the private Azure URL.
+- **DOI mirror:** ✅ **published (2026-06-17).** Citable Zenodo deposit (StarPhase
+  call JSONs, score, checksums, scoring script — BAM/BAI excluded):
+  **https://doi.org/10.5281/zenodo.20727790** (CC-BY-4.0; DOI resolves live).
+  This repository is the public mirror of that deposit.
 
 ---
 
