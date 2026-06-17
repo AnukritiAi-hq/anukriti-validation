@@ -122,7 +122,7 @@ Run locally where `az` is logged in (`az login`).
 ```bash
 RG=anukriti-lrs-01
 LOC=centralindia
-SA=<ACCOUNT>                              # private — contact authors                       # globally unique, lowercase alnum
+SA=<ACCOUNT>                              # private storage account — contact authors
 CONTAINER=giab-cyp2d6-artifacts
 SRC=anukriti/data/giab_cyp2d6
 
