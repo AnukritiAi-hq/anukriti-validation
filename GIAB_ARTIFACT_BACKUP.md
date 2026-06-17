@@ -22,11 +22,11 @@ blob container and **size-verified** (byte-exact, 0 mismatches).
 | Subscription | `Azure subscription 1` (`e64e3da3-a8ef-452e-a709-7d7437e12be9`) |
 | Resource group | **`anukriti-lrs-01`** |
 | Region | `centralindia` (matches `anukriti-genomics-rg`) |
-| Storage account | **`anukritilrs79730`** |
+| Storage account | _[private — contact authors]_ |
 | SKU / kind / tier | `Standard_LRS` · `StorageV2` · `Cool` access tier |
 | Container | **`giab-cyp2d6-artifacts`** |
 | Security | HTTPS-only, TLS 1.2, **public blob access disabled** |
-| Base URL | `https://anukritilrs79730.blob.core.windows.net/giab-cyp2d6-artifacts/` |
+| Base URL | `[private Azure Blob Storage — contact authors]` |
 
 > **Naming caution:** `anukriti-lrs-01` is used here as a **resource group**
 > name. In [`AZURE_VM_SETUP.md`](AZURE_VM_SETUP.md) the same string appears as
@@ -84,7 +84,7 @@ LRS Cool).
 
 ## 2. Permanent Blob URLs (paper Data Availability)
 
-Base: `https://anukritilrs79730.blob.core.windows.net/giab-cyp2d6-artifacts/`
+Base: `[private Azure Blob Storage — contact authors]`
 
 ```
 .../HG01190_CYP2D6_GRCh38.bam
@@ -122,7 +122,7 @@ Run locally where `az` is logged in (`az login`).
 ```bash
 RG=anukriti-lrs-01
 LOC=centralindia
-SA=anukritilrs79730                       # globally unique, lowercase alnum
+SA=<ACCOUNT>                              # private — contact authors                       # globally unique, lowercase alnum
 CONTAINER=giab-cyp2d6-artifacts
 SRC=anukriti/data/giab_cyp2d6
 
@@ -167,7 +167,7 @@ az storage blob upload-batch \
 ## 4. Verify the backup (size check)
 
 ```bash
-SA=anukritilrs79730
+SA=<ACCOUNT>                              # private — contact authors
 CONTAINER=giab-cyp2d6-artifacts
 SRC=anukriti/data/giab_cyp2d6
 
@@ -193,7 +193,7 @@ Last verified: **2026-06-17 — 18/18 OK, 0 mismatches.**
 - **Read-only SAS for reviewers** (time-boxed, container-scoped):
   ```bash
   END=$(date -u -d "+365 days" '+%Y-%m-%dT%H:%MZ')
-  az storage container generate-sas --account-name anukritilrs79730 \
+  az storage container generate-sas --account-name <ACCOUNT> \
     --name giab-cyp2d6-artifacts --permissions rl --expiry "$END" \
     --auth-mode login --as-user -o tsv
   # append "?<sas>" to each blob URL
@@ -202,8 +202,8 @@ Last verified: **2026-06-17 — 18/18 OK, 0 mismatches.**
   data files (the two checksum files themselves are excluded — no
   self-hashing), saved locally to `anukriti/data/giab_cyp2d6/` and uploaded to
   the container. Format: standard `<hash>  <filename>` (basenames, sorted).
-  - `https://anukritilrs79730.blob.core.windows.net/giab-cyp2d6-artifacts/checksums.sha256` (18 lines, 1,562 B)
-  - `https://anukritilrs79730.blob.core.windows.net/giab-cyp2d6-artifacts/checksums.md5` (18 lines, 986 B)
+  - `[private Azure Blob Storage — contact authors]` (18 lines, 1,562 B)
+  - `[private Azure Blob Storage — contact authors]` (18 lines, 986 B)
 
   Verify (after downloading the artifacts + both checksum files into the same dir):
   ```bash
